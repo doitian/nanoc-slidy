@@ -1,0 +1,14 @@
+# Editor tmporary files
+
+.*.sw*
+*~
+\#*
+.\#*
+*.orig
+*.rej
+.DS_Store
+
+# Project files
+/output
+/tmp
+.sass-cache
