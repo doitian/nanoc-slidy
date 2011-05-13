@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+
+# A few helpful tips about the Rules file:
+#
+# * The order of rules is important: for each item, only the first matching
+#   rule is applied.
+#
+# * Item identifiers start and end with a slash (e.g. “/about/” for the file
+#   “content/about.html”). To select all children, grandchildren, … of an
+#   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
+#   because “*” matches zero or more characters.
+
+['*#*', '*~'].each do |pattern|
+  compile pattern do
+  end
+  route pattern do
+  end
+end
+
+%w{stylesheets scripts images}.each do |dir|
+  compile "/#{dir}/*" do
+    filter :sass if item[:extension] == 'sass'
+    # ignore
+  end
+  route "/#{dir}/*" do
+    if item[:extension] == 'sass'
+      item.identifier.chop + '.css'
+    else
+      item.identifier.chop + '.' + item[:extension]
+    end
+  end
+end
+
+PRESENTATION_REGEX = %r{^/[^/]+/$}
+ASSETS_REGEX = %r{^/[^/]+/assets/}
+SLIDE_REGEX = %r{^/[^/]+/.+$}
+
+
+compile PRESENTATION_REGEX do
+  filter :erb
+  filter :haml
+  layout 'presentation'
+  filter :pygments
+end
+route PRESENTATION_REGEX do
+  item.identifier + '/index.html'
+end
+
+compile ASSETS_REGEX do
+  # copy as is
+end
+route ASSETS_REGEX do
+  item.identifier.chop + '.' + item[:extension]
+end
+  
+compile SLIDE_REGEX do
+  filter :erb
+  filter :kramdown
+  layout 'slide'
+end
+route SLIDE_REGEX do
+  # do not write to output directory
+end
+
+compile '*' do
+  filter :erb
+end
+
+route '*' do
+  item.identifier + 'index.html'
+end
+
+layout '*', :erb

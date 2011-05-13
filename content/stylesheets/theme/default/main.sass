@@ -1,0 +1,297 @@
+body
+  background-color: #F4F9FA
+  padding: 0
+  margin: 0
+  font-family: "Gill Sans MT", "Gill Sans", GillSans, "PT Sans", arial, freesans, clean, sans-serif
+
+h1, h2, h3
+  font-family: 'Lucida Grande', 'Ubuntu', helvetica, arial, freesans, clean, sans-serif
+  
+.background
+  z-index: 1
+  position: absolute
+  vertical-align: bottom
+  left: 0
+  right: 0
+  font-size: 60%
+  bottom: 1.2em
+  height: 251px
+  background: url(left-bottom.png) no-repeat left bottom
+
+  .background-inner-wrapper
+    display: block
+    position: absolute
+    right: 0
+    bottom: 0
+    width: 273px
+    height: 235px
+    background: url(right-bottom.png) no-repeat left bottom
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+  border-top: 2px solid #CCE3E7
+  border-bottom: 2px solid #CCE3E7
+  thead
+    background: #B6DDE3
+    border-bottom: 1px solid #CCE3E7
+  tbody
+    tr:nth-child(2n+0)
+      background: #DFF0F3
+
+p,pre,blockquote,h2,h3,h4,h5,h6,dl,table
+  margin-left: 0
+  margin-right: 0
+
+div.slide
+  margin: 3% 4% 0%
+  background: url(logo.png) no-repeat right top
+  font-size: 140%
+  td,th
+    font-size: 180%
+
+  h1
+    font-size: 180%
+    color: #589541
+
+  strong
+    color: #D40408
+
+  &.cover
+    text-align: center
+    h1
+      font-size: 200%
+      padding-top: 10%
+      margin: 0
+    ul li
+      list-style: none
+
+  pre
+    border-color: #BBD6A2
+
+code
+  font-style: normal
+
+.right
+  float: right
+
+.highlight
+  /* Comment */
+  .c
+    color: #807060
+    font-style: italic
+  /* Error */
+  .err
+    color: #a61717
+    background-color: #e3d2d2
+  /* Keyword */
+  .k
+    font-weight: bold
+  /* Operator */
+  .o
+    font-weight: bold 
+  /* Comment.Multiline */
+  .cm
+    color: #999988
+    font-style: italic 
+  /* Comment.Preproc */
+  .cp
+    color: #999999
+    font-weight: bold 
+  /* Comment.Single */
+  .c1
+    color: #999988
+    font-style: italic 
+  /* Comment.Special */
+  .cs
+    color: #999999
+    font-weight: bold
+    font-style: italic 
+  /* Generic.Deleted */
+  .gd
+    color: #000000
+    background-color: #ffdddd 
+  /* Generic.Deleted.Specific */
+  .gd .x
+    color: #000000
+    background-color: #ffaaaa 
+  /* Generic.Emph */
+  .ge
+    font-style: italic 
+  /* Generic.Error */
+  .gr
+    color: #aa0000 
+  /* Generic.Heading */
+  .gh
+    color: #999999 
+  /* Generic.Inserted */
+  .gi
+    color: #000000
+    background-color: #ddffdd 
+  /* Generic.Inserted.Specific */
+  .gi .x
+    color: #000000
+    background-color: #aaffaa 
+  .gc
+    color: #999
+    background-color: #EAF2F5
+  /* Generic.Output *  /
+  .go
+    color: #888888   
+  /* Generic.Prompt */
+  .gp
+    color: #555555 
+  /* Generic.Strong */
+  .gs
+    font-weight: bold 
+  /* Generic.Subheading */
+  .gu
+    color: #aaaaaa 
+  /* Generic.Traceback */
+  .gt
+    color: #aa0000 
+  /* Keyword.Constant */
+  .kc
+    font-weight: bold 
+  /* Keyword.Declaration */
+  .kd
+    font-weight: bold 
+  /* Keyword.Pseudo */
+  .kp
+    font-weight: bold 
+  /* Keyword.Reserved */
+  .kr
+    font-weight: bold 
+  /* Keyword.Type */
+  .kt
+    color: #445588
+    font-weight: bold 
+  /* Literal.Number */
+  .m
+    color: #009999 
+  /* Literal.String */
+  .s
+    color: #d14 
+  /* Name.Attribute */
+  .na
+    color: #008080 
+  /* Name.Builtin */
+  .nb
+    color: #0086B3 
+  /* Name.Class */
+  .nc
+    color: #445588
+    font-weight: bold 
+  /* Name.Constant */
+  .no
+    color: #008080 
+  /* Name.Entity */
+  .ni
+    color: #800080 
+  /* Name.Exception */
+  .ne
+    color: #990000
+    font-weight: bold 
+  /* Name.Function */
+  .nf
+    color: #990000
+    font-weight: bold 
+  /* Name.Namespace */
+  .nn
+    color: #555555 
+  /* Name.Tag */
+  .nt
+    color: #000080 
+  /* Name.Variable */
+  .nv
+    color: #008080 
+  /* Operator.Word */
+  .ow
+    font-weight: bold 
+  /* Text.Whitespace */
+  .w
+    color: #bbbbbb 
+  /* Literal.Number.Float */
+  .mf
+    color: #009999 
+  /* Literal.Number.Hex */
+  .mh
+    color: #009999 
+  /* Literal.Number.Integer */
+  .mi
+    color: #009999 
+  /* Literal.Number.Oct */
+  .mo
+    color: #009999 
+  /* Literal.String.Backtick */
+  .sb
+    color: #d14 
+  /* Literal.String.Char */
+  .sc
+    color: #d14 
+  /* Literal.String.Doc */
+  .sd
+    color: #d14 
+  /* Literal.String.Double */
+  .s2
+    color: #d14 
+  /* Literal.String.Escape */
+  .se
+    color: #d14 
+  /* Literal.String.Heredoc */
+  .sh
+    color: #d14 
+  /* Literal.String.Interpol */
+  .si
+    color: #d14 
+  /* Literal.String.Other */
+  .sx
+    color: #d14 
+  /* Literal.String.Regex */
+  .sr
+    color: #009926 
+  /* Literal.String.Single */
+  .s1
+    color: #d14 
+  /* Literal.String.Symbol */
+  .ss
+    color: #990073 
+  /* Name.Builtin.Pseudo */
+  .bp
+    color: #999999 
+  /* Name.Variable.Class */
+  .vc
+    color: #008080 
+  /* Name.Variable.Global */
+  .vg
+    color: #008080 
+  /* Name.Variable.Instance */
+  .vi
+    color: #008080 
+  /* Literal.Number.Integer.Long */
+  .il
+    color: #009999
+
+pre
+  white-space: pre-wrap
+  white-space: -moz-pre-wrap !important
+  white-space: -pre-wrap
+  white-space: -o-pre-wrap
+  word-wrap: break-word
+
+ul.hbox
+  margin: 0.5em 0 0.5em
+  li
+    width: 50%
+    float: left
+    li
+      width: 100%
+      float: none
+
+ul,ol
+  li
+    line-height: 1.2em
+    margin-bottom: 0.3em
+p
+  margin: 0
+  margin-bottom: 0.5em
