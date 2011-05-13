@@ -52,3 +52,14 @@ task :watch do
   end
   monitor.run
 end
+
+desc "Deploy to gh-pages"
+task :deploy do
+  system %(nanoc3 compile)
+  system %(git checkout gh-pages)
+  system %(mv -f output/* .)
+  system %(git add .)
+  system %(git commit -m 'Deploy site')
+  system %(git push origin gh-pages)
+  system %(git checkout master)
+end
