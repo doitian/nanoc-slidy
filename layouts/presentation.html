@@ -27,5 +27,27 @@
 <% item.children.sort_by(&:identifier).each do |slide| %>
 <%= slide.compiled_content(:snapshot => :last) %>
 <% end %>
+
+<script type="text/javascript">
+// for ipad
+var body = document.getElementsByTagName('body')[0];
+body.addEventListener('touchstart', function(e) {
+  this.startX = e.touches[0].pageX;
+}, false);
+body.addEventListener('touchmove', function(e) {
+  if (this.startX != null && e.touches.length == 1) {
+    var delta = e.touches[0].pageX - this.startX;
+    if (delta < -100) {
+      this.startX = e.touches[0].pageX;
+      w3c_slidy.next_slide(false);
+      e.preventDefault();
+    } else if (delta > 100) {
+      this.startX = e.touches[0].pageX;
+      w3c_slidy.previous_slide(false);
+      e.preventDefault();
+    }
+  }
+}, true);
+</script>
 </body>
 </html>
