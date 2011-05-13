@@ -5,3 +5,4 @@ Access Snapshot
 - `compiled_content(params = {})`
   - `:rep` representation name, default value `:default`
   - `:snapshot` snapshot name, default value `:pre || :last`
+- **Auto** dependencies detection  
