@@ -12,4 +12,5 @@ Nanoc resources
 HTML generation resources
 -------------------------
 
+-   [Best static site generator](http://stackoverflow.com/questions/186290/best-static-website-generator)
 -   [Gollum Wiki helpers](https://github.com/github/gollum/blob/master/lib/gollum/markup.rb)
