@@ -57,7 +57,9 @@ desc "Deploy to gh-pages"
 task :deploy do
   system %(nanoc3 compile)
   system %(git checkout gh-pages)
-  system %(mv -f output/* .)
+  Dir['output/*'].each do |f|
+    cp_r f, '.'
+  end
   system %(git add .)
   system %(git commit -m 'Deploy site')
   system %(git push origin gh-pages)
