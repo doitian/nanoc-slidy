@@ -35,7 +35,9 @@ PRESENTATION_REGEX = %r{^/[^/]+/$}
 ASSETS_REGEX = %r{^/[^/]+/assets/}
 SLIDE_REGEX = %r{^/[^/]+/.+$}
 
-
+compile '/' do
+  filter :erb
+end
 compile PRESENTATION_REGEX do
   filter :erb
   filter :haml

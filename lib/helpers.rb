@@ -41,5 +41,12 @@ module Nanoc3Helpers
 
     %Q(<a href="#{url}">#{CGI.escape_html(title)}</a>)
   end
+
+  def presentations
+    return @presentations if @presentations
+    @presentations = items.find_all { |item| item.identifier =~ %r(^/[^/]+/$) }
+    @presentations = @presentations.sort { |a,b| b.mtime <=> a.mtime }
+  end
+
 end
 include Nanoc3Helpers
